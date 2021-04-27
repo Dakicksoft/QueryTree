@@ -8,32 +8,32 @@ using QueryTree.Models;
 
 namespace QueryTree.Controllers
 {
-    public class IdentityController : Controller
+  public class IdentityController : Controller
+  {
+    protected ApplicationDbContext db;
+    protected UserManager<ApplicationUser> _userManager;
+    private ApplicationUser _currentUser;
+
+    public IdentityController(UserManager<ApplicationUser> userManager, ApplicationDbContext dbContext)
     {
-        protected ApplicationDbContext db;
-        protected UserManager<ApplicationUser> _userManager;
-        private ApplicationUser _currentUser;
+      db = dbContext;
+      _userManager = userManager;
+    }
 
-        public IdentityController(UserManager<ApplicationUser> userManager, ApplicationDbContext dbContext)
+    public ApplicationUser CurrentUser
+    {
+      get
+      {
+        if (_currentUser == null)
         {
-            db = dbContext;
-            _userManager = userManager;
-        }
-
-		public ApplicationUser CurrentUser
-		{
-			get
-			{
-                if (_currentUser == null)
-                {
-					string userId = _userManager.GetUserId(User);
-					_currentUser = db.ApplicationUsers
+          string userId = _userManager.GetUserId(User);
+          _currentUser = db.ApplicationUsers
                                         .Include(u => u.Organisation)
                                         .FirstOrDefault(u => u.Id == userId);
-                }
+        }
 
-                return _currentUser;
-			}
-		}
+        return _currentUser;
+      }
     }
+  }
 }

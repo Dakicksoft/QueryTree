@@ -66,23 +66,23 @@ namespace QueryTree
       services.AddAuthentication()
           .AddCookie(options =>
           {
-                  // Cookie settings
-                  options.ExpireTimeSpan = TimeSpan.FromDays(150);
+            // Cookie settings
+            options.ExpireTimeSpan = TimeSpan.FromDays(150);
             options.LoginPath = "/Account/LogIn";
             options.LogoutPath = "/Account/LogOut";
           });
 
       services.Configure<IdentityOptions>(options =>
       {
-              // Password settings
-              options.Password.RequiredLength = 8;
+        // Password settings
+        options.Password.RequiredLength = 8;
 
-              // Lockout settings
-              options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+        // Lockout settings
+        options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
         options.Lockout.MaxFailedAccessAttempts = 10;
 
-              // User settings
-              options.User.RequireUniqueEmail = true;
+        // User settings
+        options.User.RequireUniqueEmail = true;
       });
 
       services.AddDatabaseDeveloperPageExceptionFilter();
@@ -111,7 +111,9 @@ namespace QueryTree
 
       app.UseStaticFiles();
 
-      app.UseAuthentication();
+
+   
+
 
       if (Configuration["RunHangfire"] == "true")
       {
@@ -124,14 +126,23 @@ namespace QueryTree
         app.UseHangfireDashboard("/hangfire", dashboardOptions);
       }
 
-      app.UseMvc(routes =>
+      app.UseRouting();
+
+      // who are you? 
+      app.UseAuthentication();
+      // are you allowed?  
+      app.UseAuthorization();
+
+      app.UseEndpoints(endpoints =>
       {
-        routes.MapRoute(
+        endpoints.MapControllers();
+        endpoints.MapControllerRoute(
                   name: "default",
-                  template: "{controller=Home}/{action=Index}/{id?}");
+                  pattern: "{controller=Home}/{action=Index}/{id?}");
       });
 
-      if (!String.IsNullOrWhiteSpace(Configuration.GetValue<string>("Customization:BaseUri")))
+
+      if (!string.IsNullOrWhiteSpace(Configuration.GetValue<string>("Customization:BaseUri")))
       {
         app.Use((context, next) =>
         {
