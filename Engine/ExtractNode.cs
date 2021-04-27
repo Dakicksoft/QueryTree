@@ -46,7 +46,7 @@ namespace QueryTree.Engine
 
         public override bool IsConfigured()
         {
-            return Inputs.Any() && !String.IsNullOrWhiteSpace(ResultColumnName);
+            return Inputs.Any() && !string.IsNullOrWhiteSpace(ResultColumnName);
         }
 
         public override void UpdateSettings(Dictionary<string, object> settings)

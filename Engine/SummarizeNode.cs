@@ -258,11 +258,11 @@ namespace QueryTree.Engine
                 selectCols.Add(string.Format("{0} AS Column_{1:D}", aggStr, selectCols.Count));
             }
 
-            var sql = string.Format("SELECT {0} FROM {1}", String.Join(",", selectCols), input1.GetDependencySql());
+            var sql = string.Format("SELECT {0} FROM {1}", string.Join(",", selectCols), input1.GetDependencySql());
 
             if (GroupByColumnIndexes.Count > 0)
             {
-                sql += string.Format(" GROUP BY {0}", String.Join(",", groupByCols));
+                sql += string.Format(" GROUP BY {0}", string.Join(",", groupByCols));
             }
 
             return sql;

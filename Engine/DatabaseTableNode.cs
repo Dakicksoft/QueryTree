@@ -105,7 +105,7 @@ namespace QueryTree.Engine
             {
                 case DatabaseType.SQLServer:
                     // turn 'schema.table' into '[schema].[table]' in case of spaces. Also prevent SQL injection
-                    return String.Join(".", Table.Split('.').Select(s => "[" + s.Replace("'", "''") + "]"));
+                    return string.Join(".", Table.Split('.').Select(s => "[" + s.Replace("'", "''") + "]"));
                 case DatabaseType.PostgreSQL:
                     // turn 'schema.table' into '[schema].[table]' in case of spaces. Also prevent SQL injection
                     return string.Join(".", Table.Split('.').Select(s => "\"" + s.Replace("'", "''") + "\""));

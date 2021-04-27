@@ -1,11 +1,12 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{4687C4BB-B4D5-4549-A0E1-E2AEA17CF3CB}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Engine", "Engine\Engine.csproj", "{4687C4BB-B4D5-4549-A0E1-E2AEA17CF3CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{61DC1986-95A7-4B95-A6B6-F3DBA74CACCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{61DC1986-95A7-4B95-A6B6-F3DBA74CACCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryTree", "Web\QueryTree.csproj", "{D9B429A4-CF3C-446D-B884-A7E6058514FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueryTree", "Web\QueryTree.csproj", "{D9B429A4-CF3C-446D-B884-A7E6058514FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,5 +26,11 @@ Global
 		{D9B429A4-CF3C-446D-B884-A7E6058514FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9B429A4-CF3C-446D-B884-A7E6058514FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9B429A4-CF3C-446D-B884-A7E6058514FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2D8CF1D-B341-4621-AAAC-1A6C84D535D8}
 	EndGlobalSection
 EndGlobal
