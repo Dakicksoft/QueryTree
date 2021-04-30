@@ -112,9 +112,6 @@ namespace QueryTree
       app.UseStaticFiles();
 
 
-   
-
-
       if (Configuration["RunHangfire"] == "true")
       {
         app.UseHangfireServer();

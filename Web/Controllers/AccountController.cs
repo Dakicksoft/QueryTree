@@ -1,25 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using QueryTree.Models;
-using QueryTree.Managers;
-using QueryTree.ViewModels;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using QueryTree.Managers;
+using QueryTree.Models;
+using QueryTree.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Cryptography;
+using System.Threading.Tasks;
 
 namespace QueryTree.Controllers
 {
-    [Authorize]
+  [Authorize]
     public class AccountController : IdentityController
     {
         private readonly SignInManager<ApplicationUser> _signInManager;

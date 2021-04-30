@@ -57,16 +57,16 @@ namespace QueryTree.ViewModels
         public bool UseSshKey { get; set; }
 
         [Display(Name = "SSH Server")]
-        public string SshServer { get; set; }
+        public string? SshServer { get; set; }
 
         [Display(Name = "SSH Port")]
         public int? SshPort { get; set; }
 
         [Display(Name = "SSH Username")]
-        public string SshUsername { get; set; }
+        public string? SshUsername { get; set; }
 
         [Display(Name = "SSH Password")]
-        public string SshPassword { get; set; }
+        public string? SshPassword { get; set; }
 
         public int? SshKeyFileID { get; set; }
 
