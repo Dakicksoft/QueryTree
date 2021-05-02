@@ -70,7 +70,7 @@ namespace QueryTree.ViewModels
 
         public int? SshKeyFileID { get; set; }
 
-        public SshKeyFile SshKeyFile { get; set; }
+        public SshKeyFile? SshKeyFile { get; set; }
 
         [Required]
         [Display(Name = "Database Name")]

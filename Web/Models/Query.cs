@@ -19,7 +19,7 @@ namespace QueryTree.Models
         public virtual ApplicationUser LastEditedBy { get; set; }
         public DateTime? LastEditedOn { get; set; }
         [DataType(DataType.MultilineText)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public bool IsSimpleQuery { get; set; }
 

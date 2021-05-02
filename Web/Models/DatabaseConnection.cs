@@ -45,7 +45,7 @@ namespace QueryTree.Models
 
     public int? SshKeyFileID { get; set; }
 
-    public virtual SshKeyFile SshKeyFile { get; set; }
+    public virtual SshKeyFile? SshKeyFile { get; set; }
 
     [Required]
     [Display(Name = "Database Name")]
