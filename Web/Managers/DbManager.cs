@@ -212,7 +212,7 @@ namespace QueryTree.Managers
                             + "            AND C.TABLE_SCHEMA = PK.TABLE_SCHEMA "
                             + "            AND C.TABLE_NAME = PK.TABLE_NAME "
                             + "            AND C.COLUMN_NAME = PK.COLUMN_NAME "
-                            + "WHERE C.TABLE_SCHEMA <> 'sys' AND C.TABLE_NAME <> '__MigrationHistory' "
+                            + "WHERE C.TABLE_SCHEMA <> 'sys' AND C.TABLE_NAME <> '__EFMigrationHistory' "
                             + "ORDER BY C.TABLE_SCHEMA, C.TABLE_NAME, PK.COLUMN_NAME DESC, C.COLUMN_NAME ";
                         cmd = CreateCommand(type, conn, sql);
                     }

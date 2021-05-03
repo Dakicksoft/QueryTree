@@ -23,6 +23,6 @@ namespace QueryTree.Models
 
         public bool IsSimpleQuery { get; set; }
 
-        public virtual ScheduledReport ScheduledReport { get; set; }
+        public virtual ScheduledReport? ScheduledReport { get; set; }
     }
 }
