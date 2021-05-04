@@ -15,10 +15,10 @@ namespace QueryTree.Models
         public int DatabaseConnectionID { get; set; }
         
         public virtual DatabaseConnection DatabaseConnection { get; set; }
-        public string ApplicationUserID{ get; set; }
+        public string? ApplicationUserID{ get; set; }
 
         [ForeignKey("ApplicationUserID")]
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public virtual ApplicationUser? ApplicationUser { get; set; }
         
         [Display(Name="Access Level")]
         public UserDatabaseTypes Type { get; set; }
@@ -30,6 +30,6 @@ namespace QueryTree.Models
 
         [Display(Name = "Email Address")]
         [DataType(DataType.EmailAddress)]
-        public string InviteEmail { get; set; }
+        public string? InviteEmail { get; set; }
     }
 }

@@ -72,7 +72,8 @@ namespace QueryTree.Controllers
             var conns = db.DatabaseConnections
                 .Include(uc => uc.Organisation)
                 .Join(db.UserDatabaseConnections, db => db.DatabaseConnectionID, uc => uc.DatabaseConnectionID, (db, uc) => new { Uc = uc, Db = db })
-                .Where(uc => uc.Uc.ApplicationUserID == CurrentUser.Id);
+                .Where(uc => uc.Uc.ApplicationUserID == CurrentUser.Id)
+                .ToList();
 
             foreach (var conn in conns)
             {
